@@ -1,4 +1,3 @@
-import logging
 import tempfile
 
 from aja.deploy.base import DeployBase
