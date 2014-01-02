@@ -20,6 +20,7 @@ setup(name='ajaplugin_plone',
       package_dir={"": "src"},
       packages=find_packages('src'),
       include_package_data=True,
+      test_suite="ajaplugin_plone.tests",
       zip_safe=False,
       install_requires=[
           'setuptools',

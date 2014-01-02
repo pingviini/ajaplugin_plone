@@ -1,18 +1,25 @@
-from ConfigParser import ConfigParser
+from ConfigParser import (
+    ConfigParser,
+    NoSectionError
+    )
 
 
 class DeployConfigParser(ConfigParser):
 
-    def getlist(self, section, option):
+    def get_list(self, section, option):
         value = self.get(section, option)
         return list(filter(None, (x.strip() for x in value.splitlines())))
 
-    def gettuple(self, section, option):
-        value = self.get(section, option)
+    def get_tuple(self, section, option):
+        try:
+            value = self.get(section, option)
+        except NoSectionError:
+            return None
+
         return tuple(filter(None, (x.strip() for x in value.splitlines())))
 
-    def getlistint(self, section, option):
-        return [int(x) for x in self.getlist(section, option)]
+    def get_list_int(self, section, option):
+        return [int(x) for x in self.get_list(section, option)]
 
 
 class DeployParser(object):
@@ -28,4 +35,4 @@ class DeployParser(object):
 
     @property
     def ignores(self):
-        return self.parser.gettuple('deploy:plone', 'ignores')
+        return self.parser.get_tuple('deploy:plone', 'ignores')
