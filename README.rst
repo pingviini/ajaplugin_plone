@@ -2,6 +2,7 @@ Deploy Plone buildouts with Aja
 ===============================
 
 .. image:: https://secure.travis-ci.org/pingviini/ajaplugin_plone.png
+    :target: http://travis-ci.org/pingviini/ajaplugin_plone
 
 Configuration
 -------------
