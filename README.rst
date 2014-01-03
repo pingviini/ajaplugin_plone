@@ -1,14 +1,17 @@
 Deploy Plone buildouts with Aja
 ===============================
 
+.. image:: https://secure.travis-ci.org/pingviini/ajaplugin_plone.png
+
 Configuration
 -------------
 
-ajaplugin_plone looks config from section 'deploy:plone'. Available options
-are:
+ajaplugin_plone looks config from section 'deploy:plone'. Currently available
+options are:
 
-* ignores (newline separated globs).
-
+ignores
+    Newline separated globs telling which files/directories are excluded
+    during deployment. This list is appended to Aja's global ignores list.
 
 Example
 -------
